@@ -24,8 +24,8 @@ This is a basic Data Structures assignment intended to deepen understanding of h
 
 ## Sample Input
 
-![Input](screenshots/Input.png)
+![Input](Screenshots/Input.png)
 
 ## Output
 
-![Output](screenshots/output.png)
+![Output](Screenshots/output.png)
