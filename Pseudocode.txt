@@ -1,0 +1,37 @@
+Class CustomLinkedList:
+    Node head
+
+    Method insert(data):
+        Create new node
+        If head is null:
+            Set head to new node
+        Else:
+            Traverse to end of list
+            Append new node
+
+    Method delete(data):
+        If list is empty, return
+        If head data matches:
+            Move head to next
+        Else:
+            Traverse to find data
+            Remove the node by linking previous to next
+
+    Method iterator():
+        Return LinkedListIterator starting from head
+
+Class LinkedListIterator:
+    Node current = head
+
+    Method hasNext():
+        Return true if current is not null
+
+    Method next():
+        Return current.data, move to next node
+
+Main class:
+    Create list
+    Load data from file using loadFromFile()
+    Use iterator to print values
+    Delete an element
+    Iterate again to show updated list
