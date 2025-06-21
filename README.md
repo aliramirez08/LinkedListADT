@@ -28,4 +28,4 @@ This is a basic Data Structures assignment intended to deepen understanding of h
 
 ## Output
 
-![Output](Screenshots/output.png)
+![Output](Screenshots/Output.png)
