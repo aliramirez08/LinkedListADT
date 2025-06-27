@@ -1,4 +1,5 @@
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
@@ -24,6 +25,7 @@ public class CustomLinkedList {
             head = newNode;
             return;
         }
+
         Node current = head;
         while (current.next != null) {
             current = current.next;
@@ -31,13 +33,14 @@ public class CustomLinkedList {
         current.next = newNode;
     }
 
-    // Delete first occurrence
-    public void delete(int data) {
-        if (head == null) return;
+    // Delete first occurrence — updated to return success/failure
+    public boolean delete(int data) {
+        if (head == null) return false;
 
+        // Deleting the head node
         if (head.data == data) {
             head = head.next;
-            return;
+            return true;
         }
 
         Node current = head;
@@ -45,12 +48,15 @@ public class CustomLinkedList {
             current = current.next;
         }
 
-        if (current.next != null) {
-            current.next = current.next.next;
+        if (current.next == null) {
+            return false; // Not found
         }
+
+        current.next = current.next.next;
+        return true; // Deleted
     }
 
-    // Iterator
+    // Iterator method
     public Iterator<Integer> iterator() {
         return new LinkedListIterator();
     }
@@ -73,7 +79,7 @@ public class CustomLinkedList {
         }
     }
 
-    // Read from file
+    // Load from file
     public void loadFromFile(String filename) throws FileNotFoundException {
         Scanner scanner = new Scanner(new File(filename));
         while (scanner.hasNextInt()) {
